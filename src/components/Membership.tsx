@@ -61,10 +61,10 @@ const Membership = () => {
         {/* Glass bubble for title */}
         <div className="text-center mb-16">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Mitgliedschaft</span>
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl text-gray-300 leading-relaxed">
               Werden Sie Teil unserer exklusiven Cannabis-Community und genießen Sie die Vorteile einer legalen, sicheren Umgebung.
             </p>
           </div>
@@ -92,19 +92,19 @@ const Membership = () => {
                 <plan.icon className={`h-12 w-12 ${plan.popular ? 'text-primary' : 'text-muted-foreground'}`} />
               </div>
 
-              <h3 className="text-2xl font-bold mb-2 text-foreground">{plan.name}</h3>
-              <p className="text-muted-foreground mb-6">{plan.description}</p>
+              <h3 className="text-2xl font-bold mb-2 text-white">{plan.name}</h3>
+              <p className="text-gray-300 mb-6">{plan.description}</p>
 
               <div className="mb-8">
-                <span className="text-4xl font-bold text-foreground">€{plan.price}</span>
-                <span className="text-muted-foreground">/{plan.period}</span>
+                <span className="text-4xl font-bold text-white">€{plan.price}</span>
+                <span className="text-gray-300">/{plan.period}</span>
               </div>
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center text-left">
                     <Check className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
-                    <span className="text-foreground">{feature}</span>
+                    <span className="text-white">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -126,7 +126,7 @@ const Membership = () => {
         {/* Bottom CTA in glass bubble */}
         <div className="text-center mt-12">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
-            <p className="text-muted-foreground mb-6">
+            <p className="text-gray-300 mb-6">
               Alle Preise verstehen sich inklusive MwSt. • Mindestvertragslaufzeit: 6 Monate
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
