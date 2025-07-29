@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Check, Star, Crown } from "lucide-react";
+import { Check, Star, Crown, Leaf } from "lucide-react";
 
 const Membership = () => {
   const plans = [
@@ -88,8 +88,25 @@ const Membership = () => {
                 </div>
               )}
 
-              <div className="flex justify-center mb-4">
-                <plan.icon className={`h-12 w-12 ${plan.popular ? 'text-green-400' : 'text-gray-400'}`} />
+              <div className="flex justify-center mb-6">
+                <div className="flex gap-2">
+                  {index === 0 && (
+                    <Leaf className="h-14 w-14 text-green-400" />
+                  )}
+                  {index === 1 && (
+                    <>
+                      <Leaf className="h-14 w-14 text-green-400" />
+                      <Leaf className="h-14 w-14 text-green-400" />
+                    </>
+                  )}
+                  {index === 2 && (
+                    <>
+                      <Leaf className="h-14 w-14 text-green-400" />
+                      <Leaf className="h-14 w-14 text-green-400" />
+                      <Leaf className="h-14 w-14 text-green-400" />
+                    </>
+                  )}
+                </div>
               </div>
 
               <h3 className="text-2xl font-bold mb-2 text-white">{plan.name}</h3>
