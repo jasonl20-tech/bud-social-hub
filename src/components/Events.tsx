@@ -8,7 +8,7 @@ const Events = () => {
       title: "Cannabis & Wellness Workshop",
       date: "15. Februar 2024",
       time: "18:00 - 20:00",
-      location: "GreenCircle Hauptraum",
+      location: "Donnersbergerknospe Hauptraum",
       attendees: 25,
       maxAttendees: 30,
       description: "Erfahren Sie mehr über die therapeutischen Eigenschaften von Cannabis und verschiedene Anwendungsmethoden.",
@@ -71,9 +71,9 @@ const Events = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {events.map((event, index) => (
-            <Card key={index} className="p-6 bg-card border-border/50 hover:shadow-medium transition-all duration-300">
+            <Card key={index} className="p-6 bg-card border-border/50 hover:shadow-medium transition-all duration-300 rounded-sm">
               <div className="flex justify-between items-start mb-4">
-                <span className={`px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(event.category)}`}>
+                <span className={`px-3 py-1 rounded-sm text-sm font-medium ${getCategoryColor(event.category)}`}>
                   {event.category}
                 </span>
                 <div className="flex items-center text-sm text-muted-foreground">
@@ -102,12 +102,12 @@ const Events = () => {
 
               <div className="flex gap-3">
                 <Button 
-                  className="flex-1 bg-gradient-primary shadow-soft hover:shadow-medium transition-all"
+                  className="flex-1 bg-gradient-primary shadow-soft hover:shadow-medium transition-all rounded-sm font-semibold"
                   disabled={event.attendees >= event.maxAttendees}
                 >
                   {event.attendees >= event.maxAttendees ? "Ausgebucht" : "Anmelden"}
                 </Button>
-                <Button variant="outline" className="border-primary/30 hover:bg-primary/10">
+                <Button variant="outline" className="border-primary/30 hover:bg-primary/10 rounded-sm font-medium">
                   Details
                 </Button>
               </div>
@@ -116,7 +116,7 @@ const Events = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="border-primary/30 hover:bg-primary/10">
+          <Button variant="outline" size="lg" className="border-primary/30 hover:bg-primary/10 rounded-sm font-medium">
             Alle Events anzeigen
           </Button>
         </div>

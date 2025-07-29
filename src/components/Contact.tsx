@@ -9,20 +9,20 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Adresse", 
-      content: "Grüne Straße 123\n10115 Berlin",
+      content: "Donnersberg Straße 45\n67295 Bolanden",
       link: "https://maps.google.com"
     },
     {
       icon: Phone,
       title: "Telefon",
-      content: "+49 30 12345678",
-      link: "tel:+493012345678"
+      content: "+49 6352 123456",
+      link: "tel:+496352123456"
     },
     {
       icon: Mail,
       title: "E-Mail",
-      content: "info@greencircle-csc.de",
-      link: "mailto:info@greencircle-csc.de"
+      content: "info@donnersbergerknospe.de",
+      link: "mailto:info@donnersbergerknospe.de"
     },
     {
       icon: Clock,
@@ -47,7 +47,7 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card className="p-8 bg-gradient-card border-border/50">
+          <Card className="p-8 bg-gradient-card border-border/50 rounded-sm">
             <h3 className="text-2xl font-bold mb-6 text-foreground">Nachricht senden</h3>
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
@@ -85,7 +85,7 @@ const Contact = () => {
                 />
               </div>
               
-              <Button className="w-full bg-gradient-primary shadow-soft hover:shadow-medium transition-all" size="lg">
+              <Button className="w-full bg-gradient-primary shadow-soft hover:shadow-medium transition-all rounded-sm" size="lg">
                 Nachricht senden
               </Button>
             </form>
@@ -96,9 +96,9 @@ const Contact = () => {
             <h3 className="text-2xl font-bold mb-6 text-foreground">Kontakt & Info</h3>
             
             {contactInfo.map((info, index) => (
-              <Card key={index} className="p-6 bg-card border-border/50 hover:shadow-soft transition-all duration-300">
+              <Card key={index} className="p-6 bg-card border-border/50 hover:shadow-soft transition-all duration-300 rounded-sm">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-gradient-primary p-3 rounded-lg">
+                  <div className="bg-gradient-primary p-3 rounded-sm">
                     <info.icon className="h-6 w-6 text-white" />
                   </div>
                   <div className="flex-1">
@@ -119,7 +119,7 @@ const Contact = () => {
             ))}
 
             {/* Important Notice */}
-            <Card className="p-6 bg-yellow-50 border-yellow-200 dark:bg-yellow-900/20 dark:border-yellow-800">
+            <Card className="p-6 bg-yellow-50 border-yellow-200 dark:bg-yellow-900/20 dark:border-yellow-800 rounded-sm">
               <h4 className="font-semibold text-foreground mb-3">Wichtiger Hinweis</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Der Zutritt zu unserem Club ist nur für Mitglieder ab 21 Jahren gestattet. 

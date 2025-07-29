@@ -71,7 +71,7 @@ const Membership = () => {
           {plans.map((plan, index) => (
             <Card 
               key={index} 
-              className={`relative p-8 text-center transition-all duration-300 hover:shadow-medium ${
+              className={`relative p-8 text-center transition-all duration-300 hover:shadow-medium rounded-sm ${
                 plan.popular 
                   ? 'border-primary shadow-glow scale-105 bg-gradient-card' 
                   : 'bg-card border-border hover:border-primary/50'
@@ -79,7 +79,7 @@ const Membership = () => {
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-primary text-white px-4 py-2 rounded-full text-sm font-semibold">
+                  <span className="bg-gradient-primary text-white px-4 py-2 rounded-sm text-sm font-semibold">
                     Beliebteste Wahl
                   </span>
                 </div>
@@ -107,7 +107,7 @@ const Membership = () => {
               </ul>
 
               <Button 
-                className={`w-full ${
+                className={`w-full rounded-sm font-semibold ${
                   plan.popular 
                     ? 'bg-gradient-primary shadow-soft hover:shadow-medium' 
                     : 'bg-secondary hover:bg-secondary/80'
@@ -125,10 +125,10 @@ const Membership = () => {
             Alle Preise verstehen sich inklusive MwSt. Mindestlaufzeit: 3 Monate
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" className="rounded-sm font-medium">
               Kostenlose Clubführung
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" className="rounded-sm font-medium">
               Fragen zur Mitgliedschaft?
             </Button>
           </div>

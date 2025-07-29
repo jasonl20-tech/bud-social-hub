@@ -30,11 +30,11 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <Leaf className="h-8 w-8" />
-              <span className="text-xl font-bold">GreenCircle CSC</span>
+              <span className="text-xl font-bold">Donnersbergerknospe E.V</span>
             </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               Ein Cannabis Social Club für verantwortungsvollen und legalen Cannabis-Konsum 
-              in Berlin. Gemeinschaft, Bildung und Qualität stehen im Mittelpunkt.
+              in der Region Donnersbergkreis. Gemeinschaft, Bildung und Qualität stehen im Mittelpunkt.
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((social, index) => (
@@ -42,7 +42,7 @@ const Footer = () => {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                  className="p-2 bg-white/10 rounded-sm hover:bg-white/20 transition-colors"
                 >
                   <social.icon className="h-5 w-5" />
                 </a>
@@ -71,9 +71,9 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Kontakt</h4>
             <div className="space-y-2 text-primary-foreground/80">
-              <p>Grüne Straße 123<br />10115 Berlin</p>
-              <p>Tel: +49 30 12345678</p>
-              <p>info@greencircle-csc.de</p>
+              <p>Donnersberg Straße 45<br />67295 Bolanden</p>
+              <p>Tel: +49 6352 123456</p>
+              <p>info@donnersbergerknospe.de</p>
             </div>
             <div className="mt-4">
               <h5 className="font-medium mb-2">Öffnungszeiten</h5>
@@ -99,7 +99,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-            <div className="mt-4 p-3 bg-white/10 rounded-lg">
+            <div className="mt-4 p-3 bg-white/10 rounded-sm">
               <p className="text-xs text-primary-foreground/80 leading-relaxed">
                 Nur für Mitglieder ab 21 Jahren. Cannabis wird ausschließlich an Vereinsmitglieder 
                 abgegeben. Kein Verkauf an Dritte.
@@ -110,7 +110,7 @@ const Footer = () => {
 
         <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-primary-foreground/60 text-sm">
-            © 2024 GreenCircle Cannabis Social Club e.V. Alle Rechte vorbehalten.
+            © 2024 Donnersbergerknospe E.V. Alle Rechte vorbehalten.
           </p>
           <p className="text-primary-foreground/60 text-sm mt-2 md:mt-0">
             Registrierter Verein • Vereinsregister Berlin VR 12345

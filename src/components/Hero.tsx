@@ -15,10 +15,10 @@ const Hero = () => {
     >
       <div className="container mx-auto px-4 text-center text-white relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Cannabis
-            <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
-              {" "}Social Club
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in tracking-tight">
+            Donnersberg
+            <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent block md:inline">
+              erknospe E.V
             </span>
           </h1>
           
@@ -29,7 +29,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg"
-              className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8 py-4"
+              className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8 py-4 font-semibold rounded-sm"
             >
               Mitglied werden
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -37,7 +37,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-4"
+              className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-4 font-semibold rounded-sm"
             >
               Mehr erfahren
             </Button>

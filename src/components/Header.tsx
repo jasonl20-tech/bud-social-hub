@@ -14,13 +14,13 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
+    <header className="fixed top-0 w-full bg-background/10 backdrop-blur-xl border-b border-white/10 z-50 transition-all duration-300">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Leaf className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold text-foreground">GreenCircle CSC</span>
+            <span className="text-xl font-bold text-foreground">Donnersbergerknospe E.V</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -38,7 +38,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-gradient-primary shadow-soft hover:shadow-medium transition-all">
+            <Button className="bg-gradient-primary shadow-none hover:shadow-soft transition-all px-6 py-2 font-medium">
               Mitglied werden
             </Button>
           </div>
