@@ -6,7 +6,7 @@ const Membership = () => {
   const plans = [
     {
       name: "Starter",
-      price: "25",
+      price: "100",
       period: "Monat",
       description: "Ideal für Cannabis-Neulinge",
       features: [
@@ -21,7 +21,7 @@ const Membership = () => {
     },
     {
       name: "Standard",
-      price: "45",
+      price: "150",
       period: "Monat",
       description: "Die perfekte Balance",
       features: [
@@ -37,7 +37,7 @@ const Membership = () => {
     },
     {
       name: "Premium",
-      price: "75",
+      price: "200",
       period: "Monat",
       description: "Das Vollprogramm",
       features: [
@@ -144,7 +144,7 @@ const Membership = () => {
         <div className="text-center mt-12">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
             <p className="text-gray-300 mb-6">
-              Alle Preise verstehen sich inklusive MwSt. • Mindestvertragslaufzeit: 6 Monate
+              Keine Aufnahmegebühr • Gebühr wird als Guthaben gutgeschrieben • Mindestvertragslaufzeit: 6 Monate
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/20 text-white font-medium">
