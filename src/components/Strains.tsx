@@ -25,11 +25,16 @@ const Strains = () => {
         
         scrollContainer.scrollLeft = scrollLeft;
         
-        // Prevent page scroll while in section
-        if (scrollProgress < 0.95) {
-          document.body.style.overflow = 'hidden';
-        } else {
+        // Allow normal scrolling only when horizontal scroll is complete
+        if (scrollProgress >= 0.99) {
           document.body.style.overflow = 'auto';
+          // Allow the page to continue scrolling down
+          if (rect.bottom <= windowHeight) {
+            window.scrollTo(0, window.pageYOffset + (windowHeight - rect.bottom));
+          }
+        } else {
+          // Prevent page scroll while horizontal animation is active
+          document.body.style.overflow = 'hidden';
         }
       } else {
         document.body.style.overflow = 'auto';
