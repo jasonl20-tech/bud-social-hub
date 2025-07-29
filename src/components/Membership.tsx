@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Star, Crown, Leaf } from "lucide-react";
+import membershipBg from "@/assets/membership-bg.jpg";
 
 const Membership = () => {
   const plans = [
@@ -46,7 +47,12 @@ const Membership = () => {
   ];
 
   return (
-    <section id="membership" className="py-24 bg-black/90">
+    <section id="membership" className="py-24 relative overflow-hidden" style={{
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(${membershipBg})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundAttachment: "fixed"
+    }}>
       <div className="container mx-auto px-4 animate-fade-in" data-aos="fade-up">
         {/* Glass bubble for title */}
         <div className="text-center mb-16" data-aos="fade-up" data-aos-delay="100">
