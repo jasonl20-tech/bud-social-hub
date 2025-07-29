@@ -14,25 +14,28 @@ const Hero = () => {
       }}
     >
       <div className="container mx-auto px-4 text-center text-white relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in tracking-tight">
-            Donnersbergerknospe
-            <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent block">
-              E.V
-            </span>
-          </h1>
-          
-          <p className="text-lg md:text-xl mb-8 text-gray-300 max-w-md mx-auto">
-            Cannabis Social Club
-          </p>
+        <div className="max-w-2xl mx-auto">
+          {/* Glass morphism bubble */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 md:p-12 shadow-2xl">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in tracking-tight">
+              Donnersbergerknospe
+              <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent block">
+                E.V
+              </span>
+            </h1>
+            
+            <p className="text-lg md:text-xl mb-8 text-gray-300 max-w-md mx-auto">
+              Cannabis Social Club
+            </p>
 
-          <Button 
-            size="default"
-            className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/20 transition-all duration-300 text-base px-8 py-3"
-          >
-            Mitglied werden
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+            <Button 
+              size="default"
+              className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/20 transition-all duration-300 text-base px-8 py-3"
+            >
+              Mitglied werden
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
         </div>
       </div>
 
