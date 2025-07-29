@@ -57,9 +57,9 @@ const Membership = () => {
 
   return (
     <section id="membership" className="py-24 bg-black/90">
-      <div className="container mx-auto px-4 animate-fade-in">
+      <div className="container mx-auto px-4 animate-fade-in" data-aos="fade-up">
         {/* Glass bubble for title */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up" data-aos-delay="100">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Mitgliedschaft</span>
@@ -70,7 +70,7 @@ const Membership = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="200">
           {plans.map((plan, index) => (
             <div 
               key={index} 
@@ -144,7 +144,7 @@ const Membership = () => {
         <div className="text-center mt-12">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
             <p className="text-gray-300 mb-6">
-              Keine Aufnahmegebühr • Gebühr wird als Guthaben gutgeschrieben • Mindestvertragslaufzeit: 6 Monate
+              Keine Aufnahmegebühr • Gebühr wird als Guthaben gutgeschrieben • Mindestvertragslaufzeit: 3 Monate
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/20 text-white font-medium">

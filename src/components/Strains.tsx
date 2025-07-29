@@ -105,9 +105,9 @@ const Strains = () => {
 
   return (
     <section id="strains" className="py-24 bg-black/90">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4" data-aos="fade-up">
         {/* Glass bubble for title */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up" data-aos-delay="100">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Unsere <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Sorten</span>
@@ -119,7 +119,7 @@ const Strains = () => {
         </div>
 
         {/* Horizontal scrolling strains list */}
-        <div className="relative">
+        <div className="relative" data-aos="fade-up" data-aos-delay="200">
           <div ref={scrollContainerRef} className="flex gap-6 overflow-x-hidden scrollbar-hide">
             {strains.map((strain, index) => (
               <div 

@@ -30,7 +30,7 @@ const About = () => {
     <section id="about" className="py-24 bg-black/90">
       <div className="container mx-auto px-4 animate-fade-in">
         {/* Glass bubble for main title */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up" data-aos-delay="100">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Was wir <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">bieten</span>
@@ -42,7 +42,7 @@ const About = () => {
         </div>
 
         {/* Glass bubble for mission */}
-        <div className="mb-16">
+        <div className="mb-16" data-aos="fade-up" data-aos-delay="200">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-8 md:p-12 shadow-2xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -73,9 +73,9 @@ const About = () => {
         </div>
 
         {/* Glass bubbles for features */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="300">
           {features.map((feature, index) => (
-            <div key={index} className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-2xl p-6 text-center shadow-xl hover:bg-green-500/10 transition-all duration-300">
+            <div key={index} className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-2xl p-6 text-center shadow-xl hover:bg-green-500/10 transition-all duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay={400 + index * 100}>
               <div className="flex justify-center mb-4">
                 <feature.icon className="h-12 w-12 text-green-400" />
               </div>

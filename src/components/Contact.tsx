@@ -34,9 +34,9 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 bg-black/90">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4" data-aos="fade-up">
         {/* Glass bubble for title */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up" data-aos-delay="100">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Kontakt & <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Besuch</span>
@@ -47,7 +47,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="200">
           {/* Contact Form in glass bubble */}
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-2xl p-8 shadow-xl">
             <h3 className="text-2xl font-bold mb-6 text-white">Nachricht senden</h3>
