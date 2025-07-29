@@ -10,12 +10,12 @@ const Strains = () => {
     if (!scrollContainer) return;
 
     const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-    const duration = 10000; // 10 seconds
-    const startTime = Date.now();
+    const duration = 8000; // 8 seconds for one cycle
+    let animationId: number;
 
     const animate = () => {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
+      const now = Date.now();
+      const progress = ((now / duration) % 1); // Creates a looping 0-1 cycle
       
       // Smooth easing function
       const easeInOut = progress < 0.5 
@@ -24,9 +24,7 @@ const Strains = () => {
       
       scrollContainer.scrollLeft = easeInOut * maxScroll;
       
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
+      animationId = requestAnimationFrame(animate);
     };
 
     // Start animation after a short delay
@@ -34,7 +32,12 @@ const Strains = () => {
       animate();
     }, 1000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+    };
   }, []);
 
   const strains = [
