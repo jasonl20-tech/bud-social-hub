@@ -15,23 +15,23 @@ const Hero = () => {
     >
       <div className="container mx-auto px-4 text-center text-white relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 animate-fade-in tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in tracking-tight">
             Donnersbergerknospe
             <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent block">
               E.V
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-xl mx-auto">
+          <p className="text-lg md:text-xl mb-8 text-gray-300 max-w-md mx-auto">
             Cannabis Social Club
           </p>
 
           <Button 
-            size="lg"
-            className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-12 py-4 font-semibold"
+            size="default"
+            className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/20 transition-all duration-300 text-base px-8 py-3"
           >
             Mitglied werden
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>
