@@ -9,12 +9,11 @@ const Membership = () => {
       price: "100",
       period: "Monat",
       description: "Ideal für Cannabis-Neulinge",
+      grams: "14g",
       features: [
-        "Club-Zugang täglich 16-22 Uhr",
-        "Auswahl von 3 verschiedenen Sorten",
-        "Monatliches Limit: 10g",
-        "Grundlegende Beratung",
-        "Community-Events"
+        "Voller Club-Zugang",
+        "Bis zu 14g Cannabis pro Monat",
+        "Durchschnittspreis: 7€ pro Gramm"
       ],
       popular: false,
       icon: Check
@@ -24,13 +23,11 @@ const Membership = () => {
       price: "150",
       period: "Monat",
       description: "Die perfekte Balance",
+      grams: "21g",
       features: [
-        "Club-Zugang täglich 14-24 Uhr",
-        "Auswahl von 8 verschiedenen Sorten",
-        "Monatliches Limit: 20g",
-        "Persönliche Beratung",
-        "Priorität bei neuen Sorten",
-        "Exklusive Tastings"
+        "Voller Club-Zugang",
+        "Bis zu 21g Cannabis pro Monat",
+        "Durchschnittspreis: 7€ pro Gramm"
       ],
       popular: true,
       icon: Star
@@ -40,15 +37,11 @@ const Membership = () => {
       price: "200",
       period: "Monat",
       description: "Das Vollprogramm",
+      grams: "28g",
       features: [
-        "24/7 Club-Zugang",
-        "Alle verfügbaren Sorten",
-        "Monatliches Limit: 35g",
-        "VIP-Lounge Zugang",
-        "Private Beratungstermine",
-        "Cultivation Workshops",
-        "Gäste-Berechtigung (2 Personen)",
-        "Sonderrabatte auf Zubehör"
+        "Voller Club-Zugang",
+        "Bis zu 28g Cannabis pro Monat",
+        "Durchschnittspreis: 7€ pro Gramm"
       ],
       popular: false,
       icon: Crown
