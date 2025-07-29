@@ -27,8 +27,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-gradient-card">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-24 bg-black/90">
+      <div className="container mx-auto px-4 animate-fade-in">
         {/* Glass bubble for main title */}
         <div className="text-center mb-16">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto">
