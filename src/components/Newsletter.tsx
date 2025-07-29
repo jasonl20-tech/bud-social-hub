@@ -1,11 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail } from "lucide-react";
+import { Mail, Leaf } from "lucide-react";
 
 const Newsletter = () => {
   return (
-    <section className="py-16 bg-black/95">
-      <div className="container mx-auto px-4" data-aos="fade-up">
+    <section className="py-16 bg-black/95 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute left-8 top-1/2 transform -translate-y-1/2 opacity-20 hidden lg:block">
+        <Leaf className="h-32 w-32 text-green-400 rotate-12" />
+      </div>
+      <div className="absolute right-8 top-1/4 opacity-20 hidden lg:block">
+        <Leaf className="h-24 w-24 text-green-500 -rotate-12" />
+      </div>
+      <div className="absolute right-16 bottom-1/4 opacity-20 hidden lg:block">
+        <Leaf className="h-20 w-20 text-green-400 rotate-45" />
+      </div>
+      <div className="absolute left-16 bottom-1/3 opacity-20 hidden lg:block">
+        <Leaf className="h-28 w-28 text-green-500 -rotate-45" />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10" data-aos="fade-up">
         <div className="max-w-2xl mx-auto">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-8 md:p-12 shadow-2xl text-center">
             <div className="flex justify-center mb-6">
