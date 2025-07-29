@@ -5,49 +5,50 @@ import { Check, Star, Crown } from "lucide-react";
 const Membership = () => {
   const plans = [
     {
-      name: "Basis",
-      price: "30",
+      name: "Starter",
+      price: "25",
       period: "Monat",
-      description: "Perfekt für Einsteiger",
+      description: "Ideal für Cannabis-Neulinge",
       features: [
-        "Zugang zu den Club-Räumlichkeiten",
-        "Basis Cannabis-Auswahl",
-        "Teilnahme an Events",
-        "Community-Zugang",
-        "Beratung durch Experten"
+        "Club-Zugang täglich 16-22 Uhr",
+        "Auswahl von 3 verschiedenen Sorten",
+        "Monatliches Limit: 10g",
+        "Grundlegende Beratung",
+        "Community-Events"
       ],
       popular: false,
       icon: Check
     },
     {
-      name: "Premium",
-      price: "50",
+      name: "Standard",
+      price: "45",
       period: "Monat",
-      description: "Unser beliebtestes Paket",
+      description: "Die perfekte Balance",
       features: [
-        "Alle Basis-Vorteile",
-        "Premium Cannabis-Auswahl", 
-        "Priorität bei Events",
-        "Exklusive Sorten",
+        "Club-Zugang täglich 14-24 Uhr",
+        "Auswahl von 8 verschiedenen Sorten",
+        "Monatliches Limit: 20g",
         "Persönliche Beratung",
-        "Gastfreund-Privilegien"
+        "Priorität bei neuen Sorten",
+        "Exklusive Tastings"
       ],
       popular: true,
       icon: Star
     },
     {
-      name: "VIP",
-      price: "80",
+      name: "Premium",
+      price: "75",
       period: "Monat",
-      description: "Das ultimative Erlebnis",
+      description: "Das Vollprogramm",
       features: [
-        "Alle Premium-Vorteile",
+        "24/7 Club-Zugang",
+        "Alle verfügbaren Sorten",
+        "Monatliches Limit: 35g",
         "VIP-Lounge Zugang",
-        "Limitierte Editionen",
-        "Private Events",
-        "Concierge-Service",
+        "Private Beratungstermine",
         "Cultivation Workshops",
-        "Exklusive Partnerschaften"
+        "Gäste-Berechtigung (2 Personen)",
+        "Sonderrabatte auf Zubehör"
       ],
       popular: false,
       icon: Crown
@@ -55,31 +56,33 @@ const Membership = () => {
   ];
 
   return (
-    <section id="membership" className="py-24 bg-background">
+    <section id="membership" className="py-24 bg-black/90">
       <div className="container mx-auto px-4">
+        {/* Glass bubble for title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Mitgliedschaft
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Wählen Sie die Mitgliedschaft, die am besten zu Ihren Bedürfnissen passt. 
-            Alle Mitgliedschaften beinhalten den Zugang zu unserem Club und unserer Gemeinschaft.
-          </p>
+          <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Mitgliedschaft</span>
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Werden Sie Teil unserer exklusiven Cannabis-Community und genießen Sie die Vorteile einer legalen, sicheren Umgebung.
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
-            <Card 
+            <div 
               key={index} 
-              className={`relative p-8 text-center transition-all duration-300 hover:shadow-medium rounded-sm ${
+              className={`relative bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-2xl p-8 text-center transition-all duration-300 hover:bg-green-500/10 shadow-xl ${
                 plan.popular 
-                  ? 'border-primary shadow-glow scale-105 bg-gradient-card' 
-                  : 'bg-card border-border hover:border-primary/50'
+                  ? 'scale-105 border-green-400/40 shadow-2xl' 
+                  : ''
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-primary text-white px-4 py-2 rounded-sm text-sm font-semibold">
+                  <span className="bg-gradient-to-r from-green-400 to-green-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">
                     Beliebteste Wahl
                   </span>
                 </div>
@@ -107,30 +110,33 @@ const Membership = () => {
               </ul>
 
               <Button 
-                className={`w-full rounded-sm font-semibold ${
+                className={`w-full font-semibold ${
                   plan.popular 
-                    ? 'bg-gradient-primary shadow-soft hover:shadow-medium' 
-                    : 'bg-secondary hover:bg-secondary/80'
+                    ? 'bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 text-white' 
+                    : 'bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/20 text-white'
                 }`}
                 size="lg"
               >
                 {plan.name} wählen
               </Button>
-            </Card>
+            </div>
           ))}
         </div>
 
+        {/* Bottom CTA in glass bubble */}
         <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
-            Alle Preise verstehen sich inklusive MwSt. Mindestlaufzeit: 3 Monate
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="outline" size="lg" className="rounded-sm font-medium">
-              Kostenlose Clubführung
-            </Button>
-            <Button variant="outline" size="lg" className="rounded-sm font-medium">
-              Fragen zur Mitgliedschaft?
-            </Button>
+          <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
+            <p className="text-muted-foreground mb-6">
+              Alle Preise verstehen sich inklusive MwSt. • Mindestvertragslaufzeit: 6 Monate
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/20 text-white font-medium">
+                Club-Tour vereinbaren
+              </Button>
+              <Button className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/20 text-white font-medium">
+                Beratungstermin
+              </Button>
+            </div>
           </div>
         </div>
       </div>
