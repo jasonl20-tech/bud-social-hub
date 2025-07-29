@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Star, Crown, Leaf } from "lucide-react";
-import membershipBg from "@/assets/membership-bg.jpg";
+import membershipBg from "@/assets/cannabis-cultivation-bg.jpg";
 
 const Membership = () => {
   const plans = [
