@@ -20,7 +20,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Leaf className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold text-foreground">Donnersbergerknospe E.V</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Donnersbergerknospe E.V</span>
           </div>
 
           {/* Desktop Navigation - removed */}
