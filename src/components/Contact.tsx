@@ -33,100 +33,102 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section id="contact" className="py-24 bg-black/90">
       <div className="container mx-auto px-4">
+        {/* Glass bubble for title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Kontakt & <span className="text-primary">Besuch</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Haben Sie Fragen oder möchten Sie uns besuchen? Wir freuen uns auf Ihre Nachricht 
-            oder Ihren Besuch in unserem Club.
-          </p>
+          <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Kontakt & <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Besuch</span>
+            </h2>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Haben Sie Fragen oder möchten Sie uns besuchen? Wir freuen uns auf Ihre Nachricht oder Ihren Besuch in unserem Club.
+            </p>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <Card className="p-8 bg-gradient-card border-border/50 rounded-sm">
-            <h3 className="text-2xl font-bold mb-6 text-foreground">Nachricht senden</h3>
+          {/* Contact Form in glass bubble */}
+          <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-2xl p-8 shadow-xl">
+            <h3 className="text-2xl font-bold mb-6 text-white">Nachricht senden</h3>
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-foreground">Vorname</label>
-                  <Input placeholder="Ihr Vorname" className="border-border/50" />
+                  <label className="block text-sm font-medium mb-2 text-gray-300">Vorname</label>
+                  <Input placeholder="Ihr Vorname" className="bg-white/10 border-white/20 text-white placeholder-gray-400" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-foreground">Nachname</label>
-                  <Input placeholder="Ihr Nachname" className="border-border/50" />
+                  <label className="block text-sm font-medium mb-2 text-gray-300">Nachname</label>
+                  <Input placeholder="Ihr Nachname" className="bg-white/10 border-white/20 text-white placeholder-gray-400" />
                 </div>
               </div>
               
               <div>
-                <label className="block text-sm font-medium mb-2 text-foreground">E-Mail</label>
-                <Input type="email" placeholder="ihre.email@example.com" className="border-border/50" />
+                <label className="block text-sm font-medium mb-2 text-gray-300">E-Mail</label>
+                <Input type="email" placeholder="ihre.email@example.com" className="bg-white/10 border-white/20 text-white placeholder-gray-400" />
               </div>
               
               <div>
-                <label className="block text-sm font-medium mb-2 text-foreground">Telefon (optional)</label>
-                <Input type="tel" placeholder="+49 30 12345678" className="border-border/50" />
+                <label className="block text-sm font-medium mb-2 text-gray-300">Telefon (optional)</label>
+                <Input type="tel" placeholder="+49 30 12345678" className="bg-white/10 border-white/20 text-white placeholder-gray-400" />
               </div>
               
               <div>
-                <label className="block text-sm font-medium mb-2 text-foreground">Betreff</label>
-                <Input placeholder="Worum geht es?" className="border-border/50" />
+                <label className="block text-sm font-medium mb-2 text-gray-300">Betreff</label>
+                <Input placeholder="Worum geht es?" className="bg-white/10 border-white/20 text-white placeholder-gray-400" />
               </div>
               
               <div>
-                <label className="block text-sm font-medium mb-2 text-foreground">Nachricht</label>
+                <label className="block text-sm font-medium mb-2 text-gray-300">Nachricht</label>
                 <Textarea 
                   placeholder="Ihre Nachricht an uns..." 
                   rows={5}
-                  className="border-border/50"
+                  className="bg-white/10 border-white/20 text-white placeholder-gray-400"
                 />
               </div>
               
-              <Button className="w-full bg-gradient-primary shadow-soft hover:shadow-medium transition-all rounded-sm" size="lg">
+              <Button className="w-full bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 text-white transition-all" size="lg">
                 Nachricht senden
               </Button>
             </form>
-          </Card>
+          </div>
 
-          {/* Contact Information */}
+          {/* Contact Information in glass bubbles */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold mb-6 text-foreground">Kontakt & Info</h3>
+            <h3 className="text-2xl font-bold mb-6 text-white">Kontakt & Info</h3>
             
             {contactInfo.map((info, index) => (
-              <Card key={index} className="p-6 bg-card border-border/50 hover:shadow-soft transition-all duration-300 rounded-sm">
+              <div key={index} className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-2xl p-6 shadow-xl hover:bg-green-500/10 transition-all duration-300">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-gradient-primary p-3 rounded-sm">
+                  <div className="bg-gradient-to-r from-green-400 to-green-600 p-3 rounded-xl">
                     <info.icon className="h-6 w-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-semibold text-foreground mb-2">{info.title}</h4>
+                    <h4 className="font-semibold text-white mb-2">{info.title}</h4>
                     {info.link ? (
                       <a 
                         href={info.link}
-                        className="text-muted-foreground hover:text-primary transition-colors whitespace-pre-line"
+                        className="text-gray-300 hover:text-green-400 transition-colors whitespace-pre-line"
                       >
                         {info.content}
                       </a>
                     ) : (
-                      <p className="text-muted-foreground whitespace-pre-line">{info.content}</p>
+                      <p className="text-gray-300 whitespace-pre-line">{info.content}</p>
                     )}
                   </div>
                 </div>
-              </Card>
+              </div>
             ))}
 
-            {/* Important Notice */}
-            <Card className="p-6 bg-yellow-50 border-yellow-200 dark:bg-yellow-900/20 dark:border-yellow-800 rounded-sm">
-              <h4 className="font-semibold text-foreground mb-3">Wichtiger Hinweis</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+            {/* Important Notice in glass bubble */}
+            <div className="bg-yellow-500/20 backdrop-blur-xl border border-yellow-500/30 rounded-2xl p-6 shadow-xl">
+              <h4 className="font-semibold text-yellow-300 mb-3">Wichtiger Hinweis</h4>
+              <p className="text-sm text-yellow-200 leading-relaxed">
                 Der Zutritt zu unserem Club ist nur für Mitglieder ab 21 Jahren gestattet. 
                 Bitte bringen Sie einen gültigen Lichtbildausweis mit. Erstbesucher benötigen 
                 eine Anmeldung und ein kurzes Aufnahmegespräch.
               </p>
-            </Card>
+            </div>
           </div>
         </div>
       </div>
