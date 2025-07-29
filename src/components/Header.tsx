@@ -23,18 +23,7 @@ const Header = () => {
             <span className="text-xl font-bold text-foreground">Donnersbergerknospe E.V</span>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-colors"
-              >
-                {item.name}
-              </a>
-            ))}
-          </nav>
+          {/* Desktop Navigation - removed */}
 
           {/* CTA Button */}
           <div className="hidden md:block">

@@ -61,12 +61,12 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
 
-              {/* Scroll indicator inside bubble */}
-              <div className="mt-12 flex justify-center animate-bounce">
-                <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+              {/* Scroll indicator inside bubble - clickable */}
+              <a href="#about" className="mt-12 flex justify-center animate-bounce cursor-pointer">
+                <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center hover:border-white/50 transition-colors">
                   <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
