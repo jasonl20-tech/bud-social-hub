@@ -14,9 +14,9 @@ const Hero = () => {
       }}
     >
       <div className="container mx-auto px-4 flex items-center justify-center min-h-screen relative z-10">
-        <div className="w-full max-w-lg">
+        <div className="w-full max-w-2xl">
           {/* Glass morphism bubble */}
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 md:p-14 shadow-2xl text-center text-white">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-12 md:p-16 shadow-2xl text-center text-white mx-4">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in tracking-tight">
               Donnersbergerknospe
               <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent block">
