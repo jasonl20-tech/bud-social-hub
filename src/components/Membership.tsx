@@ -9,10 +9,10 @@ const Membership = () => {
       price: "100",
       period: "Monat",
       description: "Ideal für Cannabis-Neulinge",
-      grams: "14g",
+      grams: "15g",
       features: [
         "Voller Club-Zugang",
-        "Bis zu 14g Cannabis pro Monat",
+        "Bis zu 15g Cannabis pro Monat",
         "Durchschnittspreis: 7€ pro Gramm"
       ],
       popular: false,
@@ -23,10 +23,10 @@ const Membership = () => {
       price: "150",
       period: "Monat",
       description: "Die perfekte Balance",
-      grams: "21g",
+      grams: "25g",
       features: [
         "Voller Club-Zugang",
-        "Bis zu 21g Cannabis pro Monat",
+        "Bis zu 25g Cannabis pro Monat",
         "Durchschnittspreis: 7€ pro Gramm"
       ],
       popular: true,
@@ -37,10 +37,10 @@ const Membership = () => {
       price: "200",
       period: "Monat",
       description: "Das Vollprogramm",
-      grams: "28g",
+      grams: "50g",
       features: [
         "Voller Club-Zugang",
-        "Bis zu 28g Cannabis pro Monat",
+        "Bis zu 50g Cannabis pro Monat",
         "Durchschnittspreis: 7€ pro Gramm"
       ],
       popular: false,
