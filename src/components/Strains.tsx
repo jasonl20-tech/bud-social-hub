@@ -1,11 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Leaf, Star, Zap, Heart } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const Strains = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -15,24 +14,24 @@ const Strains = () => {
 
     const handleScroll = () => {
       const rect = section.getBoundingClientRect();
-      const isInView = rect.top <= 0 && rect.bottom >= window.innerHeight;
+      const sectionHeight = section.offsetHeight;
+      const windowHeight = window.innerHeight;
       
-      if (isInView && !isScrolling) {
-        setIsScrolling(true);
-        document.body.style.overflow = 'hidden';
-        
+      // Check if we're in the section
+      if (rect.top <= 0 && rect.bottom > windowHeight) {
+        const scrollProgress = Math.abs(rect.top) / (sectionHeight - windowHeight);
         const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-        const scrollProgress = Math.abs(rect.top) / (window.innerHeight * 2);
-        const scrollLeft = Math.min(scrollProgress * maxScroll, maxScroll);
+        const scrollLeft = scrollProgress * maxScroll;
         
         scrollContainer.scrollLeft = scrollLeft;
         
-        if (scrollLeft >= maxScroll - 10) {
-          setIsScrolling(false);
+        // Prevent page scroll while in section
+        if (scrollProgress < 0.95) {
+          document.body.style.overflow = 'hidden';
+        } else {
           document.body.style.overflow = 'auto';
         }
-      } else if (!isInView && isScrolling) {
-        setIsScrolling(false);
+      } else {
         document.body.style.overflow = 'auto';
       }
     };
@@ -42,7 +41,7 @@ const Strains = () => {
       window.removeEventListener('scroll', handleScroll);
       document.body.style.overflow = 'auto';
     };
-  }, [isScrolling]);
+  }, []);
 
   const strains = [
     {
@@ -108,10 +107,10 @@ const Strains = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="strains" className="py-24 bg-black/90" style={{ height: '300vh' }}>
-      <div className="container mx-auto px-4">
+    <section ref={sectionRef} id="strains" className="bg-black/90" style={{ height: '200vh' }}>
+      <div className="sticky top-0 h-screen flex flex-col justify-center">
         {/* Glass bubble for title */}
-        <div className="text-center mb-16">
+        <div className="container mx-auto px-4 text-center mb-16">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Unsere <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Sorten</span>
@@ -123,8 +122,8 @@ const Strains = () => {
         </div>
 
         {/* Horizontal scrolling strains list */}
-        <div className="sticky top-0 h-screen flex items-center">
-          <div ref={scrollContainerRef} className="flex gap-6 overflow-x-hidden pb-6 scrollbar-hide w-full">
+        <div className="container mx-auto px-4">
+          <div ref={scrollContainerRef} className="flex gap-6 overflow-x-hidden scrollbar-hide">
             {strains.map((strain, index) => (
               <div 
                 key={index}
@@ -173,11 +172,11 @@ const Strains = () => {
               </div>
             ))}
           </div>
-          
-          {/* Scroll indicator */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-            <p className="text-gray-400 text-sm">Scrollen Sie weiter um durch die Sorten zu navigieren</p>
-          </div>
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="container mx-auto px-4 text-center mt-8">
+          <p className="text-gray-400 text-sm">Scrollen Sie weiter um durch die Sorten zu navigieren</p>
         </div>
       </div>
     </section>
