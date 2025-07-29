@@ -13,10 +13,10 @@ const Hero = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="container mx-auto px-4 text-center text-white relative z-10">
-        <div className="max-w-2xl mx-auto">
+      <div className="container mx-auto px-4 flex items-center justify-center min-h-screen relative z-10">
+        <div className="w-full max-w-lg">
           {/* Glass morphism bubble */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 md:p-14 shadow-2xl text-center text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in tracking-tight">
               Donnersbergerknospe
               <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent block">
@@ -24,7 +24,7 @@ const Hero = () => {
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl mb-8 text-gray-300 max-w-md mx-auto">
+            <p className="text-lg md:text-xl mb-8 text-gray-300">
               Cannabis Social Club
             </p>
 
