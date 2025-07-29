@@ -14,28 +14,32 @@ const Hero = () => {
       }}
     >
       <div className="container mx-auto px-4 flex items-center justify-center min-h-screen relative z-10">
-        <div className="flex items-center gap-12 w-full max-w-7xl">
-          {/* Menu navigation links */}
-          <div className="hidden lg:flex flex-col gap-6">
-            <a href="#home" className="text-white/80 hover:text-white transition-colors duration-300 text-lg font-medium">
-              Home
-            </a>
-            <a href="#about" className="text-white/80 hover:text-white transition-colors duration-300 text-lg font-medium">
-              Über uns
-            </a>
-            <a href="#membership" className="text-white/80 hover:text-white transition-colors duration-300 text-lg font-medium">
-              Mitgliedschaft
-            </a>
-            <a href="#events" className="text-white/80 hover:text-white transition-colors duration-300 text-lg font-medium">
-              Events
-            </a>
-            <a href="#contact" className="text-white/80 hover:text-white transition-colors duration-300 text-lg font-medium">
-              Kontakt
-            </a>
+        {/* Left menu bubble */}
+        <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-20 hidden lg:block">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl">
+            <div className="flex flex-col gap-4">
+              <a href="#home" className="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium px-3 py-2 rounded-lg hover:bg-white/10">
+                Home
+              </a>
+              <a href="#about" className="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium px-3 py-2 rounded-lg hover:bg-white/10">
+                Über uns
+              </a>
+              <a href="#membership" className="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium px-3 py-2 rounded-lg hover:bg-white/10">
+                Mitgliedschaft
+              </a>
+              <a href="#events" className="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium px-3 py-2 rounded-lg hover:bg-white/10">
+                Events
+              </a>
+              <a href="#contact" className="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium px-3 py-2 rounded-lg hover:bg-white/10">
+                Kontakt
+              </a>
+            </div>
           </div>
+        </div>
 
+        <div className="flex items-center gap-12 w-full max-w-7xl">
           {/* Existing glass bubble - unchanged */}
-          <div className="flex-1 max-w-4xl">
+          <div className="flex-1 max-w-4xl mx-auto">
             {/* Glass morphism bubble */}
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-12 md:p-20 shadow-2xl text-center text-white mx-4">
               <h1 className="text-3xl md:text-5xl font-bold mb-6 animate-fade-in tracking-tight">
