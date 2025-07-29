@@ -15,58 +15,24 @@ const Hero = () => {
     >
       <div className="container mx-auto px-4 text-center text-white relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in tracking-tight">
-            Donnersberg
-            <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent block md:inline">
-              erknospe E.V
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 animate-fade-in tracking-tight">
+            Donnersbergerknospe
+            <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent block">
+              E.V
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
-            Eine Gemeinschaft für verantwortungsvollen Cannabis-Konsum in legaler und sicherer Umgebung
+          <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-xl mx-auto">
+            Cannabis Social Club
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              size="lg"
-              className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8 py-4 font-semibold rounded-sm"
-            >
-              Mitglied werden
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-4 font-semibold rounded-sm"
-            >
-              Mehr erfahren
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="text-center">
-              <div className="flex items-center justify-center mb-2">
-                <Users className="h-8 w-8 text-green-400" />
-              </div>
-              <div className="text-3xl font-bold mb-1">500+</div>
-              <div className="text-gray-300">Aktive Mitglieder</div>
-            </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center mb-2">
-                <Leaf className="h-8 w-8 text-green-400" />
-              </div>
-              <div className="text-3xl font-bold mb-1">100%</div>
-              <div className="text-gray-300">Legal & Sicher</div>
-            </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center mb-2">
-                <Shield className="h-8 w-8 text-green-400" />
-              </div>
-              <div className="text-3xl font-bold mb-1">5</div>
-              <div className="text-gray-300">Jahre Erfahrung</div>
-            </div>
-          </div>
+          <Button 
+            size="lg"
+            className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-12 py-4 font-semibold"
+          >
+            Mitglied werden
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
         </div>
       </div>
 
