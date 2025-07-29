@@ -19,7 +19,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Leaf className="h-8 w-8 text-primary" />
+            <img 
+              src="/lovable-uploads/693911bd-59a2-4958-8bd0-6d57805592bc.png" 
+              alt="Donnersberger Knospe Logo" 
+              className="h-10 w-10"
+            />
             <span className="text-xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Donnersbergerknospe E.V</span>
           </div>
 
