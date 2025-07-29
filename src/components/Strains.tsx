@@ -1,7 +1,49 @@
 import { Card } from "@/components/ui/card";
 import { Leaf, Star, Zap, Heart } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const Strains = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const scrollContainer = scrollContainerRef.current;
+    
+    if (!section || !scrollContainer) return;
+
+    const handleScroll = () => {
+      const rect = section.getBoundingClientRect();
+      const isInView = rect.top <= 0 && rect.bottom >= window.innerHeight;
+      
+      if (isInView && !isScrolling) {
+        setIsScrolling(true);
+        document.body.style.overflow = 'hidden';
+        
+        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        const scrollProgress = Math.abs(rect.top) / (window.innerHeight * 2);
+        const scrollLeft = Math.min(scrollProgress * maxScroll, maxScroll);
+        
+        scrollContainer.scrollLeft = scrollLeft;
+        
+        if (scrollLeft >= maxScroll - 10) {
+          setIsScrolling(false);
+          document.body.style.overflow = 'auto';
+        }
+      } else if (!isInView && isScrolling) {
+        setIsScrolling(false);
+        document.body.style.overflow = 'auto';
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.body.style.overflow = 'auto';
+    };
+  }, [isScrolling]);
+
   const strains = [
     {
       name: "Green Gelato",
@@ -66,7 +108,7 @@ const Strains = () => {
   ];
 
   return (
-    <section id="strains" className="py-24 bg-black/90">
+    <section ref={sectionRef} id="strains" className="py-24 bg-black/90" style={{ height: '300vh' }}>
       <div className="container mx-auto px-4">
         {/* Glass bubble for title */}
         <div className="text-center mb-16">
@@ -81,8 +123,8 @@ const Strains = () => {
         </div>
 
         {/* Horizontal scrolling strains list */}
-        <div className="relative">
-          <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide">
+        <div className="sticky top-0 h-screen flex items-center">
+          <div ref={scrollContainerRef} className="flex gap-6 overflow-x-hidden pb-6 scrollbar-hide w-full">
             {strains.map((strain, index) => (
               <div 
                 key={index}
@@ -133,8 +175,8 @@ const Strains = () => {
           </div>
           
           {/* Scroll indicator */}
-          <div className="flex justify-center mt-4">
-            <p className="text-gray-400 text-sm">← Swipe für mehr Sorten →</p>
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+            <p className="text-gray-400 text-sm">Scrollen Sie weiter um durch die Sorten zu navigieren</p>
           </div>
         </div>
       </div>
