@@ -3,44 +3,38 @@ import { Leaf, Star, Zap, Heart } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const Strains = () => {
-  const sectionRef = useRef<HTMLElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const section = sectionRef.current;
     const scrollContainer = scrollContainerRef.current;
-    
-    if (!section || !scrollContainer) return;
+    if (!scrollContainer) return;
 
-    const handleScroll = () => {
-      const rect = section.getBoundingClientRect();
-      const sectionHeight = section.offsetHeight;
-      const windowHeight = window.innerHeight;
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    const duration = 10000; // 10 seconds
+    const startTime = Date.now();
+
+    const animate = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
       
-      // Check if we're in the section
-      if (rect.top <= 0 && rect.bottom > windowHeight) {
-        const scrollProgress = Math.abs(rect.top) / (sectionHeight - windowHeight);
-        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-        const scrollLeft = scrollProgress * maxScroll;
-        
-        scrollContainer.scrollLeft = scrollLeft;
-        
-        // When horizontal scroll is complete, allow normal scrolling
-        if (scrollLeft >= maxScroll - 10) {
-          document.body.style.overflow = 'auto';
-        } else {
-          document.body.style.overflow = 'hidden';
-        }
-      } else {
-        document.body.style.overflow = 'auto';
+      // Smooth easing function
+      const easeInOut = progress < 0.5 
+        ? 2 * progress * progress 
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+      
+      scrollContainer.scrollLeft = easeInOut * maxScroll;
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.body.style.overflow = 'auto';
-    };
+    // Start animation after a short delay
+    const timer = setTimeout(() => {
+      animate();
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const strains = [
@@ -107,10 +101,10 @@ const Strains = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="strains" className="bg-black/90" style={{ height: '200vh' }}>
-      <div className="sticky top-0 h-screen flex flex-col justify-center">
+    <section id="strains" className="py-24 bg-black/90">
+      <div className="container mx-auto px-4">
         {/* Glass bubble for title */}
-        <div className="container mx-auto px-4 text-center mb-16">
+        <div className="text-center mb-16">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Unsere <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Sorten</span>
@@ -122,7 +116,7 @@ const Strains = () => {
         </div>
 
         {/* Horizontal scrolling strains list */}
-        <div className="container mx-auto px-4">
+        <div className="relative">
           <div ref={scrollContainerRef} className="flex gap-6 overflow-x-hidden scrollbar-hide">
             {strains.map((strain, index) => (
               <div 
@@ -172,11 +166,6 @@ const Strains = () => {
               </div>
             ))}
           </div>
-        </div>
-        
-        {/* Scroll indicator */}
-        <div className="container mx-auto px-4 text-center mt-8">
-          <p className="text-gray-400 text-sm">Scrollen Sie weiter um durch die Sorten zu navigieren</p>
         </div>
       </div>
     </section>
