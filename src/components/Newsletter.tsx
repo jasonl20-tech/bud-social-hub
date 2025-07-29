@@ -15,7 +15,7 @@ const Newsletter = () => {
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              Bleibe auf dem <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Laufenden</span>
+              Erfahre wann wir <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">öffnen</span>
             </h2>
             
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
