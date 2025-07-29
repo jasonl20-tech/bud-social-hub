@@ -6,23 +6,23 @@ const About = () => {
   const features = [
     {
       icon: Users,
-      title: "Gemeinschaft",
-      description: "Eine offene und respektvolle Gemeinschaft von Cannabis-Enthusiasten"
+      title: "Community",
+      description: "Eine starke Gemeinschaft von Cannabis-Liebhabern mit gemeinsamen Werten"
     },
     {
       icon: Shield,
-      title: "Legal & Sicher",
-      description: "Vollständig legal und in Übereinstimmung mit allen geltenden Gesetzen"
+      title: "100% Legal",
+      description: "Vollständig reguliert und nach deutschem Recht betrieben"
     },
     {
       icon: Leaf,
-      title: "Qualität",
-      description: "Hochwertige, kontrollierte Cannabis-Produkte für unsere Mitglieder"
+      title: "Premium Qualität",
+      description: "Hochwertige Cannabis-Sorten aus kontrolliertem Anbau"
     },
     {
       icon: Heart,
-      title: "Wohlbefinden",
-      description: "Fokus auf Gesundheit, Aufklärung und verantwortungsvollen Konsum"
+      title: "Aufklärung",
+      description: "Bildung über verantwortlichen Konsum und Cannabis-Kultur"
     }
   ];
 
@@ -33,10 +33,10 @@ const About = () => {
         <div className="text-center mb-16">
           <div className="bg-black/20 backdrop-blur-xl border border-green-500/20 rounded-3xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Was wir <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">machen</span>
+              Was wir <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">bieten</span>
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Wir sind ein Cannabis Social Club, der eine sichere, legale und verantwortungsvolle Cannabis-Gemeinschaft schafft.
+              Donnersbergerknospe E.V ist Ihr Zugang zu einer professionellen Cannabis-Community mit höchsten Standards.
             </p>
           </div>
         </div>
@@ -47,17 +47,17 @@ const About = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-3xl font-bold mb-6 text-foreground">
-                  Unsere Mission
+                  Unser Angebot
                 </h3>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Donnersbergerknospe E.V wurde 2019 gegründet mit dem Ziel, eine professionelle 
-                  und sichere Umgebung für Cannabis-Liebhaber zu schaffen. Wir glauben an 
-                  Aufklärung, Gemeinschaft und die positiven Aspekte von Cannabis.
+                  Als Cannabis Social Club bieten wir unseren Mitgliedern exklusiven Zugang zu 
+                  hochwertigen Cannabis-Produkten in einer sicheren und legalen Umgebung. 
+                  Unsere Clubräume sind ein Ort der Begegnung und des Austauschs.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Als registrierter Verein folgen wir strengen Qualitätsstandards und 
-                  arbeiten eng mit den Behörden zusammen, um eine vollständig legale 
-                  und transparente Operation zu gewährleisten.
+                  Wir organisieren regelmäßige Events, Workshops und Bildungsveranstaltungen 
+                  rund um Cannabis-Kultur, Anbautechniken und verantwortlichen Konsum. 
+                  Ihre Sicherheit und Zufriedenheit stehen bei uns an erster Stelle.
                 </p>
               </div>
               <div className="relative">
