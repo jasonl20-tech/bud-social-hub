@@ -14,8 +14,8 @@ const Hero = () => {
       }}
     >
       <div className="container mx-auto px-4 flex items-center justify-center min-h-screen relative z-10">
-        {/* Left menu bubble - fixed at top */}
-        <div className="fixed left-4 top-20 z-20 hidden lg:block">
+        {/* Left menu bubble - fixed and centered */}
+        <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-20 hidden lg:block">
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl">
             <div className="flex flex-col gap-4">
               <a href="#home" className="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium px-3 py-2 rounded-lg hover:bg-white/10">
